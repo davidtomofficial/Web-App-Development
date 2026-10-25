@@ -6,7 +6,7 @@ export default function FeedbackForm({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Feedback Form</Text>
-      <Text>We value your feedback. Please provide your suggestions below.</Text>
+      <Text>The suggestions form is still in development. This preview does not collect or submit feedback.</Text>
       {/* Form fields and submit button go here */}
       <Button title="Back" onPress={() => navigation.goBack()} />
     </View>

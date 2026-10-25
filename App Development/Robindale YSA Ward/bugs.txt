@@ -1,5 +1,7 @@
-1. Does not open apps on apple devices
+Acceptance checks
 
-2. Does not open forms for volunteering or suggestions
+1. Validate Calendar, Member Tools, and GroupMe app links on real iOS and Android devices. iOS query schemes are declared; a native rebuild is required. Android package-visibility behavior still needs verification.
 
-3. Does not open websites/apps on windows
+2. Volunteering and Suggestions navigation is registered. The screens are previews; implementing and validating an actual submission workflow remains future work.
+
+3. Web/desktop service buttons use website URLs directly. Install the matching Expo web dependencies and validate a complete browser build before calling web support complete.

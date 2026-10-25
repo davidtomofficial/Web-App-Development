@@ -4,7 +4,9 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AssetExample from './components/AssetExample';
-import WelcomeScreen from './components/WelcomeScreen'; // Adjust the import to your project's folder structure
+import WelcomeScreen from './components/WelcomeScreen';
+import VolunteeringForm from './components/Volunteeringform';
+import FeedbackForm from './components/FeedbackForm';
 
 // Initialize the stack navigator
 const Stack = createStackNavigator();
@@ -22,7 +24,17 @@ export default function App() {
           <Stack.Screen
             name="AssetExample"
             component={AssetExample}
-            options={{ title: 'Asset Example' }}
+            options={{ title: 'Robindale YSA Ward' }}
+          />
+          <Stack.Screen
+            name="VolunteeringForm"
+            component={VolunteeringForm}
+            options={{ title: 'Volunteering' }}
+          />
+          <Stack.Screen
+            name="FeedbackForm"
+            component={FeedbackForm}
+            options={{ title: 'Suggestions' }}
           />
         </Stack.Navigator>
       </SafeAreaView>

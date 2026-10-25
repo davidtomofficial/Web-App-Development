@@ -6,7 +6,7 @@ export default function VolunteeringForm({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Volunteering Form</Text>
-      <Text>Please fill out your details to sign up for volunteering opportunities.</Text>
+      <Text>Volunteering signup is still in development. This preview does not collect or submit your details.</Text>
       {/* Form fields and submit button go here */}
       <Button title="Back" onPress={() => navigation.goBack()} />
     </View>

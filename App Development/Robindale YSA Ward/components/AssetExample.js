@@ -76,26 +76,26 @@ export default function AssetExample({ navigation }) {
 
       {/* Empty Boxes for Different Sections */}
       <View style={styles.boxContainer}>
-        <TouchableOpacity style={styles.box} onPress={openGoogleCalendar}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={openGoogleCalendar}>
           <Text style={styles.boxText}>Calendar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={openLdsTools}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={openLdsTools}>
           <Text style={styles.boxText}>Tools</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={openGroupMe}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={openGroupMe}>
           <Text style={styles.boxText}>Messaging</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={() => openForm('VolunteeringForm')}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={() => openForm('VolunteeringForm')}>
           <Text style={styles.boxText}>Volunteering</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={() => openForm('FeedbackForm')}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={() => openForm('FeedbackForm')}>
           <Text style={styles.boxText}>Suggestions</Text>
         </TouchableOpacity>
       </View>
 
       {/* Bug Feedback Section with Hyperlink */}
       <View style={styles.bugFeedbackContainer}>
-        <TouchableOpacity onPress={openEmailClient}>
+        <TouchableOpacity accessibilityRole="button" onPress={openEmailClient}>
           <Text style={styles.bugFeedbackText}>Report a bug or give feedback</Text>
         </TouchableOpacity>
       </View>

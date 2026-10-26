@@ -24,6 +24,7 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     },
     "description": "Requirements: Unknown\n\nTesting Dev App"

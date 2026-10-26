@@ -1,6 +1,6 @@
 // App.js
 import * as React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import AssetExample from './components/AssetExample';
@@ -11,9 +11,21 @@ import FeedbackForm from './components/FeedbackForm';
 // Initialize the stack navigator
 const Stack = createStackNavigator();
 
+// Keep native navigation unchanged; synchronize browser URLs and Back/Forward.
+const linking = Platform.OS === 'web' ? {
+  config: {
+    screens: {
+      Welcome: '',
+      AssetExample: 'dashboard',
+      VolunteeringForm: 'volunteering',
+      FeedbackForm: 'suggestions',
+    },
+  },
+} : undefined;
+
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer linking={linking}>
       <SafeAreaView style={styles.container}>
         <Stack.Navigator initialRouteName="Welcome">
           <Stack.Screen

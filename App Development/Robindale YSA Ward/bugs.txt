@@ -1,7 +1,9 @@
-Acceptance checks
+Portfolio validation boundaries
 
-1. Validate Calendar, Member Tools, and GroupMe app links on real iOS and Android devices. iOS query schemes are declared; a native rebuild is required. Android package-visibility behavior still needs verification.
+1. Browser: clean installation, Metro export, and Chromium navigation/link checks are documented in VALIDATION.md. URL history and direct-preview Back behavior are covered by regression tests.
 
-2. Volunteering and Suggestions navigation is registered. The screens are previews; implementing and validating an actual submission workflow remains future work.
+2. Native: iOS/Android builds and devices remain unverified. Existing app schemes, Android package visibility, installed/uninstalled fallbacks, and OS mail handling require validation only if this historical example is reused.
 
-3. Web/desktop service buttons use website URLs directly. Install the matching Expo web dependencies and validate a complete browser build before calling web support complete.
+3. Browser limits: Firefox, Safari/WebKit, real mobile browsers, live external-service availability, and silently blocked popups are not validated. Browser tests intercept external responses and mail-client launches.
+
+4. Scope: resume and development reference only. Volunteering and Suggestions are non-submitting portfolio previews; the sample email address is not a verified support service. No deployment or backend is part of this work.

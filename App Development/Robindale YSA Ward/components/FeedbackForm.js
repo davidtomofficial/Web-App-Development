@@ -1,14 +1,23 @@
 // FeedbackForm.js
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Platform } from 'react-native';
 
 export default function FeedbackForm({ navigation }) {
+  // A directly loaded browser URL has no prior app screen to return to.
+  const goBack = () => {
+    if (Platform.OS === 'web' && !navigation.canGoBack()) {
+      navigation.replace('AssetExample');
+    } else {
+      navigation.goBack();
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Feedback Form</Text>
-      <Text>The suggestions form is still in development. This preview does not collect or submit feedback.</Text>
+      <Text>Portfolio demonstration only. This preview does not collect or submit feedback.</Text>
       {/* Form fields and submit button go here */}
-      <Button title="Back" onPress={() => navigation.goBack()} />
+      <Button title="Back" onPress={goBack} />
     </View>
   );
 }

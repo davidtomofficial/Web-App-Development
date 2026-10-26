@@ -46,7 +46,7 @@
         </nav>
 
         <!---Campus Hours--->
-        <article>
+        <article id="contentstart" tabindex="-1">
             <h2>Campus Information</h2>
 
             <h2>Spring 2024 Hours of Operation</h2>
@@ -106,9 +106,11 @@
         <!---Contact Us Form--->
         <article>
             <h2>Contact Us</h2>
-            <p>If you have any questions&comma; comments&comma; or need further information&comma; please fill out the form below and we&apos;ll get back to you as soon as possible&period;</p>
+            <p>Try the sample form below to explore the coursework interface.</p>
 
-            <form>
+            <p id="contact-demo-note">Coursework demonstration: no messages are sent or stored. Visit <a href="https://www.csn.edu/">CSN&apos;s official website</a> for current contact information.</p>
+
+            <form id="contact-demo" aria-describedby="contact-demo-note" onsubmit="return false;">
                 <fieldset>
                     <legend>Personal Information</legend>
                     <label for="name">Name&colon;</label>
@@ -146,7 +148,7 @@
                     <textarea id="message" name="message" required></textarea>
                 </fieldset>
         
-                <button type="submit">Send Message</button>
+                <button type="submit" disabled>Demo only: sending unavailable</button>
                 <button type="reset">Clear</button>
             </form>
         </article>

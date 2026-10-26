@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, Alert, Platform, Linking } from 'react-native';
 import { bibleQuotes } from '../assets/bibleQuotes'; // Adjust the path if needed
+import { createExternalLinkActions } from '../utils/externalLinks';
+
+const { openAppOrStore, openUrl } = createExternalLinkActions({ Linking, Alert, Platform });
 
 export default function AssetExample({ navigation }) {
   // State to hold the randomly selected quote
@@ -12,34 +15,6 @@ export default function AssetExample({ navigation }) {
     const randomIndex = Math.floor(Math.random() * bibleQuotes.length);
     setRandomQuote(bibleQuotes[randomIndex]);
   }, []);
-
-  // General function to check and open an app or provide a download link
-  const openAppOrStore = (appScheme, storeUrl, webFallbackUrl) => {
-    Linking.canOpenURL(appScheme).then((supported) => {
-      if (supported) {
-        Linking.openURL(appScheme);
-      } else {
-        Alert.alert(
-          'App Not Installed',
-          'The app is not installed. Would you like to download or access it online?',
-          [
-            {
-              text: 'Cancel',
-              style: 'cancel',
-            },
-            {
-              text: 'Website',
-              onPress: () => Linking.openURL(webFallbackUrl),
-            },
-            {
-              text: 'Download',
-              onPress: () => Linking.openURL(storeUrl),
-            },
-          ]
-        );
-      }
-    });
-  };
 
   // Function to open Google Calendar directly or via store/web fallback
   const openGoogleCalendar = () => {
@@ -89,7 +64,7 @@ export default function AssetExample({ navigation }) {
 
     const emailUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    Linking.openURL(emailUrl).catch((err) => console.error('Error opening email client:', err));
+    return openUrl(emailUrl);
   };
 
   return (
@@ -101,26 +76,26 @@ export default function AssetExample({ navigation }) {
 
       {/* Empty Boxes for Different Sections */}
       <View style={styles.boxContainer}>
-        <TouchableOpacity style={styles.box} onPress={openGoogleCalendar}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={openGoogleCalendar}>
           <Text style={styles.boxText}>Calendar</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={openLdsTools}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={openLdsTools}>
           <Text style={styles.boxText}>Tools</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={openGroupMe}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={openGroupMe}>
           <Text style={styles.boxText}>Messaging</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={() => openForm('VolunteeringForm')}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={() => openForm('VolunteeringForm')}>
           <Text style={styles.boxText}>Volunteering</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box} onPress={() => openForm('FeedbackForm')}>
+        <TouchableOpacity accessibilityRole="button" style={styles.box} onPress={() => openForm('FeedbackForm')}>
           <Text style={styles.boxText}>Suggestions</Text>
         </TouchableOpacity>
       </View>
 
       {/* Bug Feedback Section with Hyperlink */}
       <View style={styles.bugFeedbackContainer}>
-        <TouchableOpacity onPress={openEmailClient}>
+        <TouchableOpacity accessibilityRole="button" onPress={openEmailClient}>
           <Text style={styles.bugFeedbackText}>Report a bug or give feedback</Text>
         </TouchableOpacity>
       </View>

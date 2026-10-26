@@ -1,5 +1,9 @@
-1. Does not open apps on apple devices
+Portfolio validation boundaries
 
-2. Does not open forms for volunteering or suggestions
+1. Browser: clean installation, Metro export, and Chromium navigation/link checks are documented in VALIDATION.md. URL history and direct-preview Back behavior are covered by regression tests.
 
-3. Does not open websites/apps on windows
+2. Native: iOS/Android builds and devices remain unverified. Existing app schemes, Android package visibility, installed/uninstalled fallbacks, and OS mail handling require validation only if this historical example is reused.
+
+3. Browser limits: Firefox, Safari/WebKit, real mobile browsers, live external-service availability, and silently blocked popups are not validated. Browser tests intercept external responses and mail-client launches.
+
+4. Scope: resume and development reference only. Volunteering and Suggestions are non-submitting portfolio previews; the sample email address is not a verified support service. No deployment or backend is part of this work.

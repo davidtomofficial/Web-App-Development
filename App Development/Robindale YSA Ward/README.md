@@ -1,11 +1,24 @@
-# Sample Snack app
+# Robindale YSA Ward — React Native / Expo Prototype
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+**Status: historical learning prototype, not a production app.** This code explores an informational application with React Native, Expo, and React Navigation. It is retained for technical portfolio review and historical reference.
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+## What is in the project
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
+- `App.js` defines a stack navigator connecting a welcome screen to the main example screen.
+- `components/WelcomeScreen.js` and `components/AssetExample.js` contain interface elements and navigation examples.
+- `components/FeedbackForm.js` and `components/Volunteeringform.js` contain prototype form components.
+- `assets/` contains associated images and example content.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+## Historical technology versions
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+The committed `package.json` references Expo SDK **~51.0.0**, React **18.2.0**, React Native **0.74.1**, React Navigation, and other dependencies. These version numbers document the prototype's historical environment; they are **not** a claim of currently supported dependencies.
+
+The manifest includes `start`, `android`, `ios`, and `web` scripts. **The current web build, native builds, accessibility, functionality, and deployment have not been independently validated.** Browser-specific dependencies and version compatibility may require changes before the app can run.
+
+## For reviewers
+
+Read the source code and component structure to evaluate the prototype. To test it, first establish a compatible Expo/React Native environment and review the dependencies. Do not use it as a currently supported app or publish it without a fresh build, security, and functionality review.
+
+This is an independent historical code experiment. Use of the organization name does **not** imply that it is an officially released, endorsed, or maintained organizational application.
+
+See the [repository-level overview](../../README.md) for the distinction between current professional work, coursework, and archived prototypes.
